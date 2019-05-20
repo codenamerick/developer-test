@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    grid-template-columns: 1fr minmax(auto, 1440px) 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+                    ". . ."
+                    ". footer .";
+    margin: 0;
+}
+
+a {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+li:nth-child(1), .newsletter-form {
+    color: #fb613b;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+footer {
+    background: #000;
+    display: grid;
+    grid-area: footer;
+    grid-template-rows: 202px minmax(244px, auto) minmax(40px, auto);
+    grid-template-areas:
+                    "footer-primary"
+                    "footer-secondary"
+                    "site-credentials";
+}
+
+.footer-primary {
+    align-items: center;
+    border-bottom: 2px solid #979797;
+    display: flex;
+    grid-area: footer-primary;
+    justify-content: center;
+}
+
+.feature-card {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 275px;
+    max-width: 350px;
+    height: 85px;
+    width: 33%;
+    text-align: center;
+}
+
+.feature-card p {
+   line-height: 1.5;
+}
+
+.feature-card:nth-child(2) {
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+    max-width: 277px;
+}
+
+.card-copy {
+    height: 100%;
+    padding: 0 30.5px;
+}
+
+.feature-card:nth-child(3) .card-copy {
+    padding-right: 25px;
+}
+
+.footer-secondary {
+    align-items: flex-start;
+    display: flex;
+    grid-area: footer-secondary;
+    justify-content: space-between;
+    padding: 60px 140px 0 140px;
+}
+
+.newsletter-form {
+    align-self: flex-start;
+    min-width: 100px;
+    max-width: 300px;
+    position: relative;
+    width: 100%;
+}
+
+.newsletter-form input {
+    background: #000;
+    border: none;
+    border-bottom: 1px solid #979797 !important;
+    color: #717171;
+    font-size: 14px;
+    font-weight: 300;
+    height: 30px;
+    letter-spacing: 1px;
+    margin-top: 11px;
+    width: 100%;
+}
+
+.subscribe-icon {
+    position: absolute;
+    right: 0;
+    top: 60%;
+}
+
+.footer-nav {
+    display: flex;
+}
+
+.footer-nav ul {
+    margin: 0;
+}
+
+.footer-nav ul:nth-child(2) {
+    padding-left: 60px;
+}
+
+.footer-nav li {
+    padding-top: 10px;
+}
+
+.footer-nav li:nth-child(1) {
+    padding-top: 0px;
+}
+
+.site-credentials {
+    align-items: center;
+    display: flex;
+    grid-area: site-credentials;
+    justify-content: space-between;
+    padding: 0px 140px 4px 140px;
+}
+
+.site-credentials p {
+    color: #979797;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.9px;
+}
+
+.social-links {
+    align-items: center;
+    display: flex;
+}
+
+.social-links a:nth-child(2) {
+    padding: 0px 20px;
+}
+
+/* 
+-------------
+media-queries
+-------------
+*/
+
+@media only screen and (max-width: 1100px) {
+    .feature-card {
+        flex-direction: column;
+        height: 150px;
+    }
+
+    h3 {
+        margin-top: 20px;
+    }
+
+    .card-copy p {
+        margin: 0;
+    }
+  }
+
+@media only screen and (max-width: 985px) {
+    .footer-secondary {
+    align-items: center;
+    flex-direction: column;
+    }
+
+    .newsletter-form {
+        align-self: center;
+        margin-bottom: 60px;
+    }
+
+    .footer-nav ul:nth-child(1) {
+        padding: 0px;
+    }
+
+    .site-credentials {
+        flex-direction: column;
+    }
+
+    .social-links {
+        padding: 60px 0px 46px 0px;
+    }
+
+}
+
+@media only screen and (max-width: 845px) {
+    footer {
+        grid-template-rows: minmax(202px, auto) minmax(244px, auto) minmax(40px, auto);
+    }
+
+    .footer-primary {
+        flex-direction: column;
+    }
+    .feature-card {
+        margin: 60px 0px;
+        width: 100%;
+    }
+    .feature-card:nth-child(2) {
+        border: none;
+        margin: 0px;
+    }
+    .footer-secondary, .site-credentials {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 642px) {
+    .newsletter-form {
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-nav ul:nth-child(2) {
+        padding: 40px 0px 0px 0px;
+    }
+
+}
